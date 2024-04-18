@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ESP32 Web Server</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="#">
+  </head>
+
+  <body>
+    <div class="app">
+      <h2 class="m0">ESP32 Web Server</h2>
+       <div class="containerFlex row">
+            <a class="button border" href="/network">Network</a>
+        </div>
+      <div class="containerFlex border">
+      <input 
+        id="test" 
+        type="text"  
+        class="textInput border"
+        placeholder="Save test value to config"
+      />
+      <button id="saveBtn" class="button border">
+        save
+      </button>
+      <div class="containerFlex row p0">
+        <strong>Test value:</strong>
+        <p id="testVal" class="m0" />
+      </div>
+      <div class="containerFlex row p0">
+        <strong>Led status:</strong>
+        <div id="ledStatus" />   
+      </div>  
+    </div>
+  </body>
+
+  <script src="scripts/main.js" type="module"></script>
+  <script src="scripts/socket.js" type="module"></script>
+</html>

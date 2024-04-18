@@ -1,0 +1,6 @@
+{
+  "apSsid": "ESP-AP",
+  "apPassword": "apPass123",
+  "wifiSsid": "<YOUR_WIFI_SSID>",
+  "wifiPassword": "<PASSWORD>"
+}

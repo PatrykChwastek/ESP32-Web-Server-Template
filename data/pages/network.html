@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ESP32 Web Server</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="#">
+  </head>
+
+  <body>
+    <div class="app">
+      <h2 class="m0">ESP32 Web Server</h2>
+      <form id="networkForm" class="containerFlex border">
+        <div class="containerFlex row center p0">
+          <a class="button border" href="/"><</a>
+          <strong>Connect to new WiFi network</strong>
+        </div>
+        <input
+          id="ssid"
+          name="ssid"
+          type="text"
+          autocomplete="off"
+          class="textInput border"
+          placeholder="WiFi SSID"
+        />
+        <input
+          id="password"
+          name="password"
+          type="password"
+          class="textInput border"
+          placeholder="Password"
+        />
+        <p id="infoText" class="textSecondary m0">
+          Note: ESP will be restarted
+        </p>
+        <button type="submit" id="connect" class="button border">
+          Connect
+        </button>
+      </form>
+    </div>
+  </body>
+  <script src="network.js"></script>
+</html>
