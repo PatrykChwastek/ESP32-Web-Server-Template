@@ -25,9 +25,11 @@ void MessageToAll(JsonDocument& doc) {
 void onWsEvent(AsyncWebSocket* server, AsyncWebSocketClient* client, AwsEventType type, void* arg, uint8_t* data, size_t len) {
     switch (type) {
     case WS_EVT_DATA: {
-        std::unique_ptr<AwsFrameInfo> info(static_cast<AwsFrameInfo*>(arg));
+        AwsFrameInfo* info = (AwsFrameInfo*)arg;
         if (info->final && info->index == 0 && info->len == len && info->opcode == WS_TEXT) {
-            std::string message(reinterpret_cast<char*>(data), len);
+            data[len] = 0;
+            char* message = (char*)data;
+
             JsonDocument doc;
             deserializeJson(doc, message);
             String type = doc["type"];
